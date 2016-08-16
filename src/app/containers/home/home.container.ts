@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { HeaderComponent } from '../../components/header';
+import { HeaderComponent } from '../../components';
 
 @Component({
     moduleId: module.id,

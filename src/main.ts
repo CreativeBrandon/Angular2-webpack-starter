@@ -4,6 +4,7 @@ import { provideRouter, ROUTER_DIRECTIVES } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { appRouterProviders } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { AuthGuard, AuthService } from './app/shared';
 
 if (process.env.ENV === 'production') {
   enableProdMode();
@@ -12,6 +13,8 @@ if (process.env.ENV === 'production') {
 bootstrap(AppComponent,
     [
         HTTP_PROVIDERS,
-        appRouterProviders
+        appRouterProviders,
+        AuthGuard,
+        AuthService
     ])
     .catch(error => console.error(error));
