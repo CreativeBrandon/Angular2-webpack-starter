@@ -4,7 +4,6 @@ import { HeaderComponent } from '../../components';
 import { AuthService } from '../../shared';
 
 @Component({
-    moduleId: module.id,
     selector: 'dashboard-container',
     directives: [ ROUTER_DIRECTIVES, HeaderComponent],
     providers: [ AuthService ],

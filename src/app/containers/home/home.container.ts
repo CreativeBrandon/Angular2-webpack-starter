@@ -3,7 +3,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HeaderComponent } from '../../components';
 
 @Component({
-    moduleId: module.id,
     selector: 'home-container',
     directives: [ ROUTER_DIRECTIVES, HeaderComponent],
     styles: [ require('./home.container.scss')],
