@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components';
 import { AuthService } from '../../shared';
 
 @Component({
     selector: 'login-container',
-    directives: [ ROUTER_DIRECTIVES, HeaderComponent ],
     providers: [AuthService],
     styles: [],
     template: `<main>

@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components';
 import { AuthService } from '../../shared';
 
 @Component({
     selector: 'dashboard-container',
-    directives: [ ROUTER_DIRECTIVES, HeaderComponent],
     providers: [ AuthService ],
     styles: [ require('./dashboard.container.scss')],
     template: `
@@ -17,7 +16,7 @@ import { AuthService } from '../../shared';
 })
 export class DashboardContainer{
 
-    constructor(private authService: AuthService){}
+    constructor(private authService: AuthService, private router: Router){}
 
     private onLogout(){
         this.authService.logout();
