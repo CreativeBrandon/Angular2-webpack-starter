@@ -10,7 +10,6 @@ import {
 const declarables = [
     HeaderComponent
 ]
-//export const providers = []; //component service providers
 
 @NgModule({
     imports: [CommonModule, RouterModule, ReactiveFormsModule],

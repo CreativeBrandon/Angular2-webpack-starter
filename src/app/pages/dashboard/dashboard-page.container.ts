@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components';
 import { AuthService } from '../../shared';
 
 @Component({
-    selector: 'dashboard-container',
+    selector: 'dashboard-page',
     providers: [ AuthService ],
-    styles: [ require('./dashboard.container.scss')],
+    styles: [ require('./dashboard-page.container.scss')],
     template: `
         <main>
             <header-component></header-component>
@@ -14,9 +13,9 @@ import { AuthService } from '../../shared';
             <button (click)="onLogout()">Sign Out</button>
         </main>`
 })
-export class DashboardContainer{
+export class DashboardPageContainer{
 
-    constructor(private authService: AuthService, private router: Router){}
+    constructor(private authService: AuthService){}
 
     private onLogout(){
         this.authService.logout();

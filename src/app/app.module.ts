@@ -4,16 +4,29 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module.ts';
+import { ComponentsModule } from './components';
 import { routing, appRoutingProviders } from './app.routing';
 import { AuthGuard, AuthService } from './shared';
-import { DashboardContainer, HomeContainer, LoginContainer } from './containers';
+
+import {
+    DashboardPageContainer,
+    HomePageContainer,
+    LoginPageContainer,
+    NotFoundPageContainer,
+} from './pages';
 
 const declarables = [
     AppComponent,
-    DashboardContainer,
-    HomeContainer,
-    LoginContainer
+    DashboardPageContainer,
+    HomePageContainer,
+    LoginPageContainer,
+    NotFoundPageContainer,
+]
+
+const providers = [
+    appRoutingProviders,
+    AuthGuard,
+    AuthService,
 ]
 
 @NgModule({
@@ -21,13 +34,10 @@ const declarables = [
         BrowserModule,
         FormsModule,
         routing,
+
         ComponentsModule,
     ],
-    providers: [
-        appRoutingProviders,
-        AuthGuard,
-        AuthService,
-    ],
+    providers: [providers],
     declarations: [declarables],
     exports: [declarables],
     bootstrap: [AppComponent]

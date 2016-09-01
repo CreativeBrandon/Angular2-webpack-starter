@@ -1,10 +1,11 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
-    DashboardContainer,
-    HomeContainer,
-    LoginContainer
- } from './containers';
+    DashboardPageContainer,
+    HomePageContainer,
+    LoginPageContainer,
+    NotFoundPageContainer,
+} from './pages';
 
  import { AuthGuard } from './shared';
 
@@ -16,18 +17,18 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeContainer
+        component: HomePageContainer
     },
     {
         path: 'dashboard',
         canActivate: [ AuthGuard ],
-        component: DashboardContainer,
+        component: DashboardPageContainer,
     },
     {
         path: 'login',
-        component: LoginContainer
+        component: LoginPageContainer
     },
-    //{path: '**', component: PageNotFoundContainer}
+    {path: '**', component: NotFoundPageContainer}
 ];
 
 export const appRoutingProviders: any[] = [];

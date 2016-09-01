@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderComponent } from '../../components';
 import { AuthService } from '../../shared';
 
 @Component({
-    selector: 'login-container',
+    selector: 'login-page',
     providers: [AuthService],
     styles: [],
     template: `<main>
@@ -14,7 +13,7 @@ import { AuthService } from '../../shared';
             </main>`
 
 })
-export class LoginContainer {
+export class LoginPageContainer {
 
     constructor(private authService: AuthService){}
 

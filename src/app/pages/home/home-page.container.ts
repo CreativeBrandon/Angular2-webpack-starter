@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components';
 
 @Component({
-    selector: 'home-container',
-    styles: [ require('./home.container.scss')],
+    selector: 'home-page',
+    styles: [ require('./home-page.container.scss')],
     template: `
         <main>
             <header-component></header-component>
@@ -12,4 +12,4 @@ import { HeaderComponent } from '../../components';
             <img src="../../public/images/angular.png">
         </main>`
 })
-export class HomeContainer{}
+export class HomePageContainer{}

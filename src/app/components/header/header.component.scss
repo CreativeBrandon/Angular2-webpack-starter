@@ -12,7 +12,8 @@ header {
             -moz-transition: all 0.2s ease-in-out;
 
             &:focus,
-            &:hover {
+            &:hover,
+            &.active {
                 color: #2980b9;
                 text-decoration: underline;
             }
