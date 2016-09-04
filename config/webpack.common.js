@@ -11,6 +11,7 @@ module.exports = {
     },
 
     resolve: {
+        modulesDirectories: ['node_modules'],
         extensions: ['', '.js', '.ts', '.scss']
     },
 
@@ -53,7 +54,6 @@ module.exports = {
             jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery',
-            google: 'google-maps'
         }),
 
         new HtmlWebpackPlugin({

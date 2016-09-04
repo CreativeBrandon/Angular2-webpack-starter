@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {
-    HeaderComponent
+    GoogleMapComponent,
+    HeaderComponent,
 } from './';
 
 const declarables = [
-    HeaderComponent
+    GoogleMapComponent,
+    HeaderComponent,
 ]
 
 @NgModule({
