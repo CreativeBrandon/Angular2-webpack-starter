@@ -34,3 +34,5 @@ const routes: Routes = [
 export const appRoutingProviders: any[] = [];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+
+export const routedPages = routes.filter(r => r.component != undefined).map(r => r.component);

@@ -15,6 +15,7 @@ npm start
 ```
 > If the `typings` folder doesn't show up after `npm install` please install them manually with:
 > `npm run postinstall`
+> Install Quick Start  https://github.com/typings/typings
 
 ## Create a new project based on the Starter Kit
 
