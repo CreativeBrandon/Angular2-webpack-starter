@@ -16,7 +16,7 @@ const declarables = [
 ]
 
 @NgModule({
-    imports: [CommonModule, RouterModule, ReactiveFormsModule, AgmCoreModule.forRoot() ],
+    imports: [CommonModule, RouterModule, ReactiveFormsModule, AgmCoreModule.forRoot({apiKey: 'AIzaSyA9gi1FxSuPVjsVMbJiTYs95GFzPFKnFaE'}) ],
     exports: [declarables],
     declarations: [declarables],
 })

@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-declare var $: any;
 
 @Component({
     selector: 'header-component',

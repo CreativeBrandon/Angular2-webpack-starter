@@ -1,6 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {
+    AboutPageContainer,
     DashboardPageContainer,
     HomePageContainer,
     LoginPageContainer,
@@ -18,6 +19,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomePageContainer
+    },
+    {
+        path: 'about',
+        component: AboutPageContainer
     },
     {
         path: 'dashboard',

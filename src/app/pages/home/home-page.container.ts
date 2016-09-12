@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderComponent } from '../../components';
 
 @Component({
     selector: 'home-page',
@@ -10,7 +9,6 @@ import { HeaderComponent } from '../../components';
             <header-component></header-component>
             <h1>Angular 2 App with Webpack Starter kit</h1>
             <img src="../../public/images/angular.png">
-            <google-maps-component></google-maps-component>
         </main>`
 })
 export class HomePageContainer{}
