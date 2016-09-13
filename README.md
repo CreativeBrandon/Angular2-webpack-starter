@@ -1,6 +1,6 @@
 # Angular 2 + Webpack Starter Kit
 
-This repository contains a starter kit for an application running Angular 2 with webpack. (RC.6 Supported)
+This repository contains a starter kit for an application running Angular 2 with webpack. (RC.7 Supported)
 
 ## Prerequisites
 * `Node.js and npm` - [Installing Node.js](https://docs.npmjs.com/getting-started/installing-node)
