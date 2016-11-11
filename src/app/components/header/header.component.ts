@@ -4,14 +4,16 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'header-component',
     template: require('./header.component.html'),
-    styles: [ require('./header.component.scss') ]
+    styles: [require('./header.component.scss')]
 })
 export class HeaderComponent implements OnInit{
 
-    constructor(private _elRef: ElementRef){ }
+    private header:HTMLElement;
 
-    ngOnInit(){
-        let el = $(this._elRef.nativeElement);
-        console.log('JQuery element', el);
+    constructor(private _elRef: ElementRef){ 
+        this.header = this._elRef.nativeElement;
+        console.log('HeaderComponent', this.header);
     }
+
+    ngOnInit(){    }
 }

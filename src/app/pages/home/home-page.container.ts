@@ -12,4 +12,9 @@ import { HeaderComponent } from '../../components';
             <img src="../../public/images/angular.png">
         </main>`
 })
-export class HomePageContainer{}
+export class HomePageContainer{
+
+    constructor(){
+        console.log('home Page Container');
+    }
+}

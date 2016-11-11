@@ -49,13 +49,6 @@ module.exports = {
             name: ['app', 'vendor', 'polyfills']
         }),
 
-        new webpack.ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery',
-            jquery: 'jquery',
-            google: 'google-maps'
-        }),
-
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         })
