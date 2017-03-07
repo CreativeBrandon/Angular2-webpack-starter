@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
-import {
-    HeaderComponent
+import { 
+    HomepageContainer,
+    NoContentComponent
 } from './';
 
 const declarables = [
-    HeaderComponent
+    HomepageContainer,
+    NoContentComponent
 ]
 
+const providers = []
+
 @NgModule({
-    imports: [CommonModule, RouterModule, ReactiveFormsModule],
+    imports: [],
     exports: [declarables],
     declarations: [declarables],
+    providers: [],
 })
-export class ComponentsModule{}
+export class FeaturesModule { }

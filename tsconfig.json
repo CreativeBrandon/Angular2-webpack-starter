@@ -3,18 +3,38 @@
         "target": "es5",
         "module": "commonjs",
         "moduleResolution": "node",
-        "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "removeComments": false,
-        "noImplicitAny": true,
-        "suppressImplicitAnyIndexErrors": true
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "noEmit": true,
+        "noEmitHelpers": false,
+        "importHelpers": false,
+        "strictNullChecks": false,
+        "lib": [
+            "dom",
+            "es6"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "types": [
+            "googlemaps",
+            "jasmine",
+            "node"
+        ]
     },
-    "compileOnSave" : false,
-    "filesGlob": [
-        "**/*.ts",
-        "**/*.tsx",
-        "node_modules/@types/**/*.d.ts",
-        "!node_modules/**"
-    ]
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "forkChecker": true,
+        "useWebpackText": true
+    },
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
 }

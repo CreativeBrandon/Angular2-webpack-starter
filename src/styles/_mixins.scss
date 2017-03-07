@@ -1,0 +1,7 @@
+/**
+*   Mixins
+**/
+// function to convert px to em
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em
+}

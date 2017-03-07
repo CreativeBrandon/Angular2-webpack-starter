@@ -1,14 +1,15 @@
 var webpackConfig = require('./webpack.test');
 
-module.exports = function (config) {
+module.exports = function(config) {
   var _config = {
     basePath: '',
 
     frameworks: ['jasmine'],
 
-    files: [
-      {pattern: './config/karma-test-shim.js', watched: false}
-    ],
+    files: [{
+      pattern: './config/karma-test-shim.js',
+      watched: false
+    }],
 
     preprocessors: {
       './config/karma-test-shim.js': ['webpack', 'sourcemap']
@@ -24,12 +25,12 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    reporters: ['progress'],
+    reporters: ['kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     singleRun: true
   };
 
