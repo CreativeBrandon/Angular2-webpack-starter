@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: 'module.id',
-    selector: 'selector',
+    selector: 'homepage-container',
     styleUrls: ['./homepage.container.scss'],
     templateUrl: 'homepage.container.html'
 })

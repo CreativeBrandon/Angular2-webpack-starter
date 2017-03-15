@@ -17,6 +17,9 @@ npm start
 > `npm run postinstall`
 > Install Quick Start  https://github.com/typings/typings
 
+## Favicon Generator
+[Favicon Generator](https://realfavicongenerator.net/)
+
 ## Create a new project based on the Starter Kit
 
 Clone this repo into new project folder (e.g., `my-proj`).

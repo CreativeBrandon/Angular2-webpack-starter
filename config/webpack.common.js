@@ -1,7 +1,7 @@
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const helpers = require('./helpers')
 
 const extractSass = new ExtractTextPlugin({
@@ -26,10 +26,14 @@ module.exports = {
                 use: ['awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader']
             }, {
                 test: /\.html$/,
-                use: ['raw-loader']
+                exclude: [helpers.root('src', 'index.html')],
+                use: ['html-loader']
+            },{
+                test: /\.(png|jpe?g|gif|svg|ico)$/,
+                use: 'file-loader?name=[name].[ext]&publicPath=assets/icons/&outputPath=assets/icons/'
             }, {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                use: 'file?name=assets/[name].[hash].[ext]'
+                test: /\.(woff|woff2|ttf|eot)$/,
+                use: 'file-loader?name=[name].[ext]&publicPath=assets/font/&outputPath=assets/font/'
             }, {
                 test: /\.css$/,
                 exclude: helpers.root('src', 'app'),
@@ -65,14 +69,6 @@ module.exports = {
                 })
             },
             {
-                test: /\.(jpg|png|gif)$/,
-                use: 'file-loader'
-            },
-            {
-                test: /\.(eot|woff2?|svg|ttf)([\?]?.*)$/,
-                use: 'file-loader'
-            },
-            {
                 test: /\.json$/,
                 use: 'json-loader'
             },
@@ -86,7 +82,7 @@ module.exports = {
         // Workaround for angular/angular#11580
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)@angular/,
-            helpers.root('./src')
+            helpers.root('./src'), {}
         ),
 
         new CommonsChunkPlugin({
