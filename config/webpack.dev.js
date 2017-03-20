@@ -4,18 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin')
 const commonConfig = require('./webpack.common.js')
 const helpers = require('./helpers')
-
-/*
-const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
-const API_URL = process.env.API_URL = 'localhost';
-const HMR = helpers.hasProcessFlag('hot')
-const METADATA = webpackMerge(commonConfig, {
-    host: 'localhost',
-    api_url: API_URL,
-    port: 8080,
-    ENV: ENV,
-    HMR: HMR
-})*/
+require('dotenv').config({
+    path: 'environment/.env'
+})
 
 module.exports = webpackMerge(commonConfig, {
     devtool: 'cheap-module-eval-source-map',
@@ -29,11 +20,23 @@ module.exports = webpackMerge(commonConfig, {
 
     plugins: [
         new ExtractTextPlugin('[name].css'),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        // Env helpers: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
+        new webpack.DefinePlugin({
+            'ENV': JSON.stringify(process.env.ENV),
+            'API_URL': JSON.stringify(process.env.API_URL),
+            'process.env': {
+                'ENV': JSON.stringify(process.env.ENV),
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                'API_URL': JSON.stringify(process.env.API_URL),
+                'PORT': JSON.stringify(process.env.PORT),
+            }
+        })
     ],
 
     devServer: {
         historyApiFallback: true,
-        stats: 'minimal'
+        stats: 'minimal',
+        port: process.env.PORT || 8080
     }
 })
